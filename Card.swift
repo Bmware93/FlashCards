@@ -6,3 +6,8 @@
 //
 
 import Foundation
+
+struct Card {
+    var front: String
+    var back: String
+}
