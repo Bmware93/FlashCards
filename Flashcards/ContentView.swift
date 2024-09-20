@@ -13,12 +13,14 @@ struct ContentView: View {
         Card(front: "What is the difference between a variable and a constant?", back: "The value of a variable can change. A constant cannot be changed."),
         Card(front: "From what is cognac made?", back: "Grapes")
     ]
+    @State private var isShowingCreateCardView = false
+    
     var body: some View {
         ZStack {
             CardDeckView(cards: cards)
             Button {
-                let newCard = Card(front: "Front", back: "Back")
-                cards.append(newCard)
+                isShowingCreateCardView = true
+                
             } label: {
                 Image(systemName: "plus")
                     .font(.headline)
@@ -31,6 +33,11 @@ struct ContentView: View {
                    maxHeight: .infinity,
                    alignment: .topTrailing)
         }
+        .sheet(isPresented: $isShowingCreateCardView) {
+            CreateCardView()
+            
+        }
+        
     }
 }
 
