@@ -34,7 +34,9 @@ struct ContentView: View {
                    alignment: .topTrailing)
         }
         .sheet(isPresented: $isShowingCreateCardView) {
-            CreateCardView()
+            CreateCardView(onCreate: { card in
+                cards.append(card)
+            })
             
         }
         
