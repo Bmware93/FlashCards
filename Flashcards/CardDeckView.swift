@@ -14,14 +14,19 @@ struct CardDeckView: View {
             ForEach(cards) { card in
                 CardView(card: card)
             }
+           
         }
+        .tabViewStyle(.page)
+        .background(Color.gray)
+        .environment(\.textCase, .uppercase)
     }
 }
 
 #Preview {
-     let cards = [
+    let cards = [
      Card(front: "What is 7+7?", back: "14"),
-     Card(front: "What is the difference between a variable and a constant?", back: "The value of a variable can change. A constant cannot be changed.")
+     Card(front: "What is the difference between a variable and a constant?", back: "The value of a variable can change. A constant cannot be changed."),
+     Card(front: "From what is cognac made?", back: "Grapes")
      ]
      return CardDeckView(cards: cards)
 }

@@ -9,6 +9,7 @@ import SwiftUI
 
 struct CardView: View {
     var card: Card
+    @Environment(\.accessibilityReduceMotion) var reduceMotion
     @State var isBackVisible: Bool = false
     var degrees: Double {
        isBackVisible ? 180 : 0
@@ -54,10 +55,18 @@ struct CardView: View {
                 .degrees(degrees),
                 axis: (x: 0.0, y: 1.0, z: 0.0)
             )
+            
 
     }
 }
 
 #Preview {
-    CardView(card: Card(front: "Front", back: "Back"))
+    let cards: [Card] = [
+        Card(front: "What is 7+7?", back: "14"),
+        Card(front: "What is the difference between a variable and a constant?", back: "The value of a variable can change. A constant cannot be changed."),
+        Card(front: "From what is cognac made?", back: "Grapes")
+    ]
+    return ForEach(cards) { card in
+        CardView(card: card)
+    }
 }

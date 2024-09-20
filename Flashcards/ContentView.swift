@@ -8,17 +8,42 @@
 import SwiftUI
 
 struct ContentView: View {
+    @State var cards: [Card] = [
+        Card(front: "What is 7+7?", back: "14"),
+        Card(front: "What is the difference between a variable and a constant?", back: "The value of a variable can change. A constant cannot be changed."),
+        Card(front: "From what is cognac made?", back: "Grapes")
+    ]
+    @State private var isShowingCreateCardView = false
+    
     var body: some View {
-        CardView(card: Card(front: "What is 7+7?", back: "14"))
+        ZStack {
+            CardDeckView(cards: cards)
+            Button {
+                isShowingCreateCardView = true
+                
+            } label: {
+                Image(systemName: "plus")
+                    .font(.headline)
+                    .padding()
+                    .background(.orange)
+                    .clipShape(.capsule)
+            }
+            .padding([.top, .trailing])
+            .frame(maxWidth: .infinity,
+                   maxHeight: .infinity,
+                   alignment: .topTrailing)
+        }
+        .sheet(isPresented: $isShowingCreateCardView) {
+            CreateCardView()
+            
+        }
+        
     }
 }
 
-#Preview("Single line question") {
-    CardView(card: Card(front: "What is 7+7?", back: "14"))
+
+#Preview("Card Deck") {
+    ContentView()
     
 }
 
-#Preview("Multiline question") {
-    CardView(card: Card(front: "What is the difference between a variable and a constant?", back: "The value of a variable can change. A constant cannot be changed."))
-    
-}
