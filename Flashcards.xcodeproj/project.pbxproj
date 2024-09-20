@@ -42,7 +42,6 @@
 		1A0C1D5D2C9C509F008167F6 = {
 			isa = PBXGroup;
 			children = (
-				1A0C1D7C2C9D1484008167F6 /* CardDeckView.swift */,
 				1A0C1D7A2C9CE18B008167F6 /* Card.swift */,
 				1A0C1D682C9C509F008167F6 /* Flashcards */,
 				1A0C1D672C9C509F008167F6 /* Products */,
@@ -63,6 +62,7 @@
 				1A0C1D692C9C509F008167F6 /* FlashcardsApp.swift */,
 				1A0C1D6B2C9C509F008167F6 /* ContentView.swift */,
 				1A0C1D782C9CDEC7008167F6 /* CardView.swift */,
+				1A0C1D7C2C9D1484008167F6 /* CardDeckView.swift */,
 				1A0C1D6D2C9C50A0008167F6 /* Assets.xcassets */,
 				1A0C1D6F2C9C50A0008167F6 /* Flashcards.entitlements */,
 				1A0C1D702C9C50A0008167F6 /* Preview Content */,
