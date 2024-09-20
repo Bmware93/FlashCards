@@ -13,6 +13,7 @@
 		1A0C1D722C9C50A0008167F6 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1A0C1D712C9C50A0008167F6 /* Preview Assets.xcassets */; };
 		1A0C1D792C9CDEC7008167F6 /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A0C1D782C9CDEC7008167F6 /* CardView.swift */; };
 		1A0C1D7B2C9CE18B008167F6 /* Card.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A0C1D7A2C9CE18B008167F6 /* Card.swift */; };
+		1A0C1D7D2C9D1484008167F6 /* CardDeckView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A0C1D7C2C9D1484008167F6 /* CardDeckView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,7 @@
 		1A0C1D712C9C50A0008167F6 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		1A0C1D782C9CDEC7008167F6 /* CardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
 		1A0C1D7A2C9CE18B008167F6 /* Card.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Card.swift; sourceTree = "<group>"; };
+		1A0C1D7C2C9D1484008167F6 /* CardDeckView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardDeckView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -40,6 +42,7 @@
 		1A0C1D5D2C9C509F008167F6 = {
 			isa = PBXGroup;
 			children = (
+				1A0C1D7C2C9D1484008167F6 /* CardDeckView.swift */,
 				1A0C1D7A2C9CE18B008167F6 /* Card.swift */,
 				1A0C1D682C9C509F008167F6 /* Flashcards */,
 				1A0C1D672C9C509F008167F6 /* Products */,
@@ -146,6 +149,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				1A0C1D6C2C9C509F008167F6 /* ContentView.swift in Sources */,
+				1A0C1D7D2C9D1484008167F6 /* CardDeckView.swift in Sources */,
 				1A0C1D792C9CDEC7008167F6 /* CardView.swift in Sources */,
 				1A0C1D6A2C9C509F008167F6 /* FlashcardsApp.swift in Sources */,
 				1A0C1D7B2C9CE18B008167F6 /* Card.swift in Sources */,
