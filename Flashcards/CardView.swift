@@ -9,6 +9,7 @@ import SwiftUI
 
 struct CardView: View {
     var card: Card
+    @Environment(\.accessibilityReduceMotion) var reduceMotion
     @State var isBackVisible: Bool = false
     var degrees: Double {
        isBackVisible ? 180 : 0
@@ -54,6 +55,7 @@ struct CardView: View {
                 .degrees(degrees),
                 axis: (x: 0.0, y: 1.0, z: 0.0)
             )
+            
 
     }
 }
