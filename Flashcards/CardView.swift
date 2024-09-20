@@ -55,8 +55,7 @@ struct CardView: View {
                 .degrees(degrees),
                 axis: (x: 0.0, y: 1.0, z: 0.0)
             )
-            
-
+            .animation(reduceMotion ? nil : .default)
     }
 }
 
