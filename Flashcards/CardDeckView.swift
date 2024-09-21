@@ -14,7 +14,6 @@ struct CardDeckView: View {
             ForEach(cards) { card in
                 CardView(card: card)
             }
-           
         }
         .tabViewStyle(.page)
         .background(Color.gray)

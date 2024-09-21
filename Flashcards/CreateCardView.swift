@@ -22,15 +22,19 @@ struct CreateCardView: View {
         
         dismiss()
     }
-    
+    enum Field: Hashable {
+        case front
+        case back
+    }
+    @FocusState var focusedField: Field?
     var body: some View {
         Form {
             Section(header: Text("Card Details")) {
                 TextField("Front", text: $front)
+                    .focused($focusedField, equals: .front)
+                 
                 TextField("Back", text: $back)
-                    .onSubmit {
-                        createCard()
-                    }
+                    .focused($focusedField, equals: .back)
             }
             Section {
                 Button("Create") {
@@ -41,6 +45,15 @@ struct CreateCardView: View {
                 Button("Cancel") {
                     dismiss()
                 }
+            }
+        }
+        .onSubmit {
+            if front.isEmpty {
+                focusedField = .front
+            } else if back.isEmpty {
+                focusedField = .back
+            } else {
+                createCard()
             }
         }
     }
