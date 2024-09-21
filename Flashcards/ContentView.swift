@@ -26,7 +26,7 @@ struct ContentView: View {
                     .font(.headline)
                     .padding()
                     .background(.orange)
-                    .clipShape(.capsule)
+                    .clipShape(.circle)
             }
             .padding([.top, .trailing])
             .frame(maxWidth: .infinity,
