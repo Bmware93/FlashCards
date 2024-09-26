@@ -23,9 +23,8 @@ struct ContentView: View {
                 
             } label: {
                 Image(systemName: "plus")
-                    .font(.headline)
+                    .font(.largeTitle)
                     .padding()
-                    .background(.orange)
                     .clipShape(.circle)
             }
             .padding([.top, .trailing])
@@ -42,7 +41,6 @@ struct ContentView: View {
         
     }
 }
-
 
 #Preview("Card Deck") {
     ContentView()

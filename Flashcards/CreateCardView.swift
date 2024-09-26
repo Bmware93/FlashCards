@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct CreateCardView: View {
-    @Environment (\.dismiss) var dismiss
+    @Environment(\.dismiss) var dismiss
     @State var front: String = ""
     @State var back: String = ""
     var onCreate: (Card) -> Void
@@ -32,9 +32,11 @@ struct CreateCardView: View {
             Section(header: Text("Card Details")) {
                 TextField("Front", text: $front)
                     .focused($focusedField, equals: .front)
+                    .submitLabel(.next)
                  
                 TextField("Back", text: $back)
                     .focused($focusedField, equals: .back)
+                    .submitLabel(.done)
             }
             Section {
                 Button("Create") {
