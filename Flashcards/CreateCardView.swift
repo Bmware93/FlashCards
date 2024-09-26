@@ -11,15 +11,15 @@ struct CreateCardView: View {
     @Environment(\.dismiss) var dismiss
     @State var front: String = ""
     @State var back: String = ""
+    @State private var bgColor: Color = .pink
     var onCreate: (Card) -> Void
     var isCardVaild: Bool {
         !front.isEmpty && !back.isEmpty
     }
     func createCard() {
         guard isCardVaild else { return }
-        let newCard = Card(front: front, back: back)
+        let newCard = Card(front: front, back: back, bgColor: bgColor)
         onCreate(newCard)
-        
         dismiss()
     }
     enum Field: Hashable {
@@ -37,6 +37,9 @@ struct CreateCardView: View {
                 TextField("Back", text: $back)
                     .focused($focusedField, equals: .back)
                     .submitLabel(.done)
+                
+                ColorPicker("Select a background color", selection: $bgColor)
+          
             }
             Section {
                 Button("Create") {
