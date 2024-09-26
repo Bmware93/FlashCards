@@ -32,7 +32,7 @@ struct CardView: View {
                        alignment: .topLeading)
                 
                 Button {
-                    withAnimation{
+                    withAnimation(.easeInOut(duration: 0.6)){
                         isBackVisible.toggle()
                     }
                     
@@ -47,7 +47,7 @@ struct CardView: View {
             .padding()
             .aspectRatio(1.25, contentMode: .fit)
             .frame(width: 300, height: 225)
-            .background(isBackVisible ? .yellow : .pink)
+            .background(card.bgColor)
             .cornerRadius(10)
             .shadow(radius: 8)
             .padding()
@@ -61,9 +61,9 @@ struct CardView: View {
 
 #Preview {
     let cards: [Card] = [
-        Card(front: "What is 7+7?", back: "14"),
-        Card(front: "What is the difference between a variable and a constant?", back: "The value of a variable can change. A constant cannot be changed."),
-        Card(front: "From what is cognac made?", back: "Grapes")
+        Card(front: "What is 7+7?", back: "14", bgColor: .indigo),
+        Card(front: "What is the difference between a variable and a constant?", back: "The value of a variable can change. A constant cannot be changed.", bgColor: .mint),
+        Card(front: "From what is cognac made?", back: "Grapes", bgColor: .orange)
     ]
     return ForEach(cards) { card in
         CardView(card: card)
